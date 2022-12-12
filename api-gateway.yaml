@@ -12,7 +12,7 @@ spring:
             provider: spring
         provider:
           spring:
-            issuer-uri: http://${authServiceHost:localhost}:9000
+            issuer-uri: http://${authServiceHost}:9000
   application:
     name: api-gateway
   cloud:

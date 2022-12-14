@@ -22,6 +22,9 @@ spring:
         uri: http://${studentServiceHost:127.0.0.1}:9000
         predicates:
             Path=/auth
+        filters:
+            TokenRelay=,
+            RemoveRequestHeader=Cookie
     security:
       oauth2:
         client:

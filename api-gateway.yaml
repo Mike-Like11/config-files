@@ -38,7 +38,7 @@ spring:
               provider: spring
           provider:
             spring:
-              issuer-uri: http://${authServiceHost:localhost}:9000/auth
+              issuer-uri: http://${authServiceHost}
 eureka:
   client:
     serviceUrl:

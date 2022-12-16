@@ -5,14 +5,14 @@ spring:
     gateway:
       routes:
         - id: university
-          uri: http://${universityServiceHost:localhost}:8090
+          uri: http://${universityServiceHost:127.0.0.1}:8090
           predicates:
             Path=/university
           filters:
             TokenRelay=,
             RemoveRequestHeader=Cookie
         - id: student
-          uri: http://${studentServiceHost:localhost}:8091
+          uri: http://${studentServiceHost:127.0.0.1}:8091
           predicates:
               Path=/student
           filters:

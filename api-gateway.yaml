@@ -31,7 +31,7 @@ spring:
               provider: spring
           provider:
             spring:
-              issuer-uri: http://${authServiceHost}
+              issuer-uri: http://bestik-auth.com
 eureka:
   client:
     serviceUrl:

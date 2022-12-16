@@ -12,7 +12,7 @@ spring:
 #            TokenRelay=,
 #            RemoveRequestHeader=Cookie
       - id: student
-        uri: http://${studentServiceHost:127.0.0.1}:8091
+        uri: http://${studentServiceHost}:8091
         predicates:
             Path=/student
         filters:

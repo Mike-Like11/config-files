@@ -4,15 +4,15 @@ spring:
   cloud:
     gateway:
       routes:
-#        - id: university
-#          uri: http://${universityServiceHost:127.0.0.1}:8090
-#          predicates:
-#            Path=/
-#          filters:
-#            TokenRelay=,
-#            RemoveRequestHeader=Cookie
+       - id: university
+         uri: http://${universityServiceHost:localhost}:8090
+         predicates:
+           Path=/
+         filters:
+           TokenRelay=,
+           RemoveRequestHeader=Cookie
       - id: student
-        uri: http://${studentServiceHost}:8091
+        uri: http://${studentServiceHost:localhost}:8091
         predicates:
             Path=/student
         filters:
@@ -31,7 +31,7 @@ spring:
               provider: spring
           provider:
             spring:
-              issuer-uri: http://bestik-auth.com
+              issuer-uri: http://${authServerHost:localhost}:9000
 eureka:
   client:
     serviceUrl:

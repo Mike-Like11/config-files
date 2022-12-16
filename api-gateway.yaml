@@ -7,7 +7,7 @@ spring:
         - id: university
           uri: http://${universityServiceHost:localhost}:8090
           predicates:
-            Path=/
+            Path=/university
           filters:
             TokenRelay=,
             RemoveRequestHeader=Cookie

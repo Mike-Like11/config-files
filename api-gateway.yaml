@@ -4,20 +4,20 @@ spring:
   cloud:
     gateway:
       routes:
-       - id: university
-         uri: http://${universityServiceHost:localhost}:8090
-         predicates:
-           Path=/
-         filters:
-           TokenRelay=,
-           RemoveRequestHeader=Cookie
-      - id: student
-        uri: http://${studentServiceHost:localhost}:8091
-        predicates:
-            Path=/student
-        filters:
+        - id: university
+          uri: http://${universityServiceHost:localhost}:8090
+          predicates:
+            Path=/
+          filters:
             TokenRelay=,
             RemoveRequestHeader=Cookie
+        - id: student
+          uri: http://${studentServiceHost:localhost}:8091
+          predicates:
+              Path=/student
+          filters:
+              TokenRelay=,
+              RemoveRequestHeader=Cookie
     security:
       oauth2:
         client:

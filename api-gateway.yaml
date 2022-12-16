@@ -4,13 +4,13 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: university
-        uri: http://${universityServiceHost:127.0.0.1}:8090
-        predicates:
-            Path=/
-        filters:
-            TokenRelay=,
-            RemoveRequestHeader=Cookie
+#        - id: university
+#          uri: http://${universityServiceHost:127.0.0.1}:8090
+#          predicates:
+#            Path=/
+#          filters:
+#            TokenRelay=,
+#            RemoveRequestHeader=Cookie
       - id: student
         uri: http://${studentServiceHost:127.0.0.1}:8091
         predicates:
@@ -35,4 +35,4 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://${eurekaServiceHost:localhost}:8761/eureka/
+      defaultZone: http://${eurekaServiceHost}:8761/eureka/
